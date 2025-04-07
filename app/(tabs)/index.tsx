@@ -2,16 +2,23 @@ import { Stack } from 'expo-router';
 import EventListItem from '~/components/EventListItem';
 
 import events from '~/assets/events.json';
+import { FlatList } from 'react-native';
 
 export default function Events() {
   return (
     <>
-      <Stack.Screen options={{ title: 'Events' }} />
+      <Stack.Screen options={{ title: 'Events', headerShadowVisible: false }} />
 
       {/* Event Card */}
-      <EventListItem event={events[0]} />
-      <EventListItem event={events[1]} />
-      <EventListItem event={events[2]} />
+
+      <FlatList
+        className="bg-white"
+        data={events}
+        renderItem={({ item }) => <EventListItem event={item} />}
+        keyExtractor={(item) => item.id}
+      />
+
+      {/* <EventListItem event={events[0]} /> */}
     </>
   );
 }
