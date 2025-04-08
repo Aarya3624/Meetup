@@ -22,8 +22,8 @@ export default function EventListItem({ event }: any) {
       {/* Footer */}
       <View className="flex-row gap-3">
         <Text className="mr-auto text-gray-700">16 going</Text>
-        <Feather name="share" size={24} color="gray" />
-        <Feather name="bookmark" size={24} color="gray" />
+        <Feather name="share" size={20} color="gray" />
+        <Feather name="bookmark" size={20} color="gray" />
       </View>
     </View>
   );
