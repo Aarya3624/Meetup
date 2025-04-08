@@ -1,4 +1,6 @@
+import { StatusBar } from 'expo-status-bar';
 import '../global.css';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { Stack } from 'expo-router';
 
@@ -9,9 +11,12 @@ export const unstable_settings = {
 
 export default function RootLayout() {
   return (
-    <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
-    </Stack>
+    <SafeAreaProvider>
+      <StatusBar style="auto" />
+      <Stack>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
+      </Stack>
+    </SafeAreaProvider>
   );
 }
