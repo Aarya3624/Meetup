@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 import { Stack, useLocalSearchParams } from 'expo-router';
-import { Image, Text, View } from 'react-native';
+import { Image, Pressable, Text, View } from 'react-native';
 import events from '~/assets/events.json';
 
 export default function EventPage() {
@@ -29,6 +29,14 @@ export default function EventPage() {
       </Text>
 
       <Text className="text-lg">{event.description}</Text>
+
+      {/* Footer */}
+      <View className="absolute bottom-0 left-0 right-0 flex-row items-center justify-between border-t  border-gray-300 p-5">
+        <Text className="text-xl font-semibold">Free</Text>
+        <Pressable className="rounded-lg bg-red-400 p-5 px-8">
+          <Text className="font-bold text-white">Join and RSVP</Text>
+        </Pressable>
+      </View>
     </View>
   );
 }
